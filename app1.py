@@ -1,8 +1,24 @@
-import json
+# import json
+# import streamlit as st
+# import pandas as pd  # type: ignore
+# from pycaret.clustering import load_model, predict_model  # type: ignore
+# import plotly.express as px  # type: ignore
+
+# TE LINIE MUSZĄ BYĆ PIERWSZE W CAŁYM PLIKU, PRZED WSZYSTKIM
+import os
+os.environ['PYCARET_NO_CDE'] = '1'
+os.environ['SKLEARN_ALLOW_DEPRECATED_SKLEARN_PACKAGE_INSTALL'] = 'True'
+
+import warnings
+warnings.filterwarnings("ignore")
+
+# NA DRUGIM MIEJSCU IMPORTUJEMY NAJPIERW PYCARET, NIGDY NA ODWROT
+from pycaret.clustering import ClusteringExperiment
+from pycaret.utils import load_model, save_model
+
+# DOPIERO NA SAMYM KOŃCU IMPORTUJEMY STREAMLIT
 import streamlit as st
-import pandas as pd  # type: ignore
-#from pycaret.clustering import load_model, predict_model  # type: ignore
-import plotly.express as px  # type: ignore
+import pandas as pd
 
 DATA = 'welcome_survey_simple_v2.csv'
 
@@ -10,17 +26,17 @@ MODEL_NAME = 'welcome_survey_clustering_pipeline_v2'
 
 CLUSTER_NAMES_AND_DESCRIPTIONS = 'welcomesurvey_cluster_names_and_descriptions_v2.json'
 
-@st.cache_data
+@st.cache_resource
 def get_cluster_names_and_descriptions():
     with open(CLUSTER_NAMES_AND_DESCRIPTIONS, "r", encoding='utf-8') as f:
         return json.loads(f.read())
     
-@st.cache_data
+@st.cache_resource
 def get_model():
     return load_model(MODEL_NAME)
 
 
-@st.cache_data
+@st.cache_resource
 def get_all_participants():
     model=get_model()
     all_df = pd.read_csv(DATA, sep=';')
