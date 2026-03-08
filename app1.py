@@ -1,7 +1,7 @@
 import json
 import streamlit as st
 import pandas as pd  # type: ignore
-from pycaret.clustering import load_model, predict_model  # type: ignore
+#from pycaret.clustering import load_model, predict_model  # type: ignore
 import plotly.express as px  # type: ignore
 
 DATA = 'welcome_survey_simple_v2.csv'

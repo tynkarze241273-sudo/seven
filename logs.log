@@ -180,3 +180,57 @@ dtype: int64}]))),
                                                               use_cat_names=True))),
                 ('trained_model', KMeans(n_clusters=10, random_state=1234))]), ml_usecase=None)
 2026-03-08 15:53:04,661:INFO:Set up data.
+2026-03-08 16:45:40,626:INFO:Initializing predict_model()
+2026-03-08 16:45:40,627:INFO:predict_model(self=<pycaret.clustering.oop.ClusteringExperiment object at 0x00000222610144D0>, estimator=Pipeline(memory=Memory(location=None),
+         steps=[('numerical_imputer',
+                 TransformerWrapper(include=[], transformer=SimpleImputer())),
+                ('categorical_imputer',
+                 TransformerWrapper(include=['age', 'edu_level', 'fav_animals',
+                                             'fav_place', 'gender'],
+                                    transformer=SimpleImputer(strategy='most_frequent'))),
+                ('ordinal_encoding',
+                 TransformerWrapper(include=['gender'],
+                                    transfo...
+                                                                         'data_type': dtype('O'),
+                                                                         'mapping': Kobieta      0
+Mê¿czyzna    1
+NaN         -1
+dtype: int64}]))),
+                ('onehot_encoding',
+                 TransformerWrapper(include=['age', 'edu_level', 'fav_animals',
+                                             'fav_place'],
+                                    transformer=OneHotEncoder(cols=['age',
+                                                                    'edu_level',
+                                                                    'fav_animals',
+                                                                    'fav_place'],
+                                                              handle_missing='return_nan',
+                                                              use_cat_names=True))),
+                ('trained_model', KMeans(n_clusters=10, random_state=1234))]), ml_usecase=None)
+2026-03-08 16:45:40,627:INFO:Set up data.
+2026-03-08 16:45:43,475:INFO:Initializing predict_model()
+2026-03-08 16:45:43,476:INFO:predict_model(self=<pycaret.clustering.oop.ClusteringExperiment object at 0x000002225F7F3390>, estimator=Pipeline(memory=Memory(location=None),
+         steps=[('numerical_imputer',
+                 TransformerWrapper(include=[], transformer=SimpleImputer())),
+                ('categorical_imputer',
+                 TransformerWrapper(include=['age', 'edu_level', 'fav_animals',
+                                             'fav_place', 'gender'],
+                                    transformer=SimpleImputer(strategy='most_frequent'))),
+                ('ordinal_encoding',
+                 TransformerWrapper(include=['gender'],
+                                    transfo...
+                                                                         'data_type': dtype('O'),
+                                                                         'mapping': Kobieta      0
+Mê¿czyzna    1
+NaN         -1
+dtype: int64}]))),
+                ('onehot_encoding',
+                 TransformerWrapper(include=['age', 'edu_level', 'fav_animals',
+                                             'fav_place'],
+                                    transformer=OneHotEncoder(cols=['age',
+                                                                    'edu_level',
+                                                                    'fav_animals',
+                                                                    'fav_place'],
+                                                              handle_missing='return_nan',
+                                                              use_cat_names=True))),
+                ('trained_model', KMeans(n_clusters=10, random_state=1234))]), ml_usecase=None)
+2026-03-08 16:45:43,476:INFO:Set up data.
