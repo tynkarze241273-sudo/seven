@@ -13,12 +13,13 @@ import warnings
 warnings.filterwarnings("ignore")
 
 # NA DRUGIM MIEJSCU IMPORTUJEMY NAJPIERW PYCARET, NIGDY NA ODWROT
-from pycaret.clustering import ClusteringExperiment
-from pycaret.utils import load_model, save_model
+from pycaret.clustering import load_model, predict_model  # type: ignore
 
 # DOPIERO NA SAMYM KOŃCU IMPORTUJEMY STREAMLIT
 import streamlit as st
 import pandas as pd
+import plotly.express as px
+import json
 
 DATA = 'welcome_survey_simple_v2.csv'
 
