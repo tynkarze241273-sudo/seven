@@ -1,6 +1,5 @@
-streamlit 
-pandas
-pycaret.clustering
-plotly.express
-
+streamlit==1.55.0
+pandas==3.0.1
+pycaret[clustering]
+plotly==5.15.0
 
